@@ -9,7 +9,6 @@ import snow_icon from "../assets/snow.png";
 import wind_icon from "../assets/wind.png";
 import humidity_icon from "../assets/humidity.png";
 import { useRef } from "react";
-// import key from "./env.VITE_WEATHER_API";
 
 function Weather() {
   const ipRef = useRef();
@@ -43,7 +42,6 @@ function Weather() {
 
       const res = await fetch(url);
       const data = await res.json();
-      //   const icon_url=` https://openweathermap.org/payload/api/media/file/10d@01d.png`
       const icon = allIcons[data.weather[0].icon] || clear_icon;
       console.log(data);
 
@@ -73,7 +71,6 @@ function Weather() {
     <div className="weather">
       {/* Main container */}
       <div className="search-bar">
-        {" "}
         {/* /Search Bar */}
         <input ref={ipRef} type="text" placeholder="search" />
         <img
